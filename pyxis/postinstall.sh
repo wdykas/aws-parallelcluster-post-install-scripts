@@ -54,7 +54,7 @@ else
 fi
 
 ENROOT_CONFIG_RELEASE=authentication-credentials # TODO automate
-wget -O /tmp/enroot.template.conf https://raw.githubusercontent.com/aws-samples/aws-parallelcluster-post-install-scripts/${ENROOT_CONFIG_RELEASE}/pyxis/enroot.template.conf
+wget -O /tmp/enroot.template.conf https://raw.githubusercontent.com/wdykas/aws-parallelcluster-post-install-scripts/fix-temp/pyxis/enroot.template.conf
 mkdir -p ${SHARED_DIR}/enroot
 chown ${NONROOT_USER} ${SHARED_DIR}/enroot
 
