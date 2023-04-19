@@ -60,12 +60,12 @@ chown ${NONROOT_USER} ${SHARED_DIR}/enroot
 
 mkdir -p /tmp/scratch
 chown ${NONROOT_USER} /tmp/scratch
-
+export ENROOT_TEMP_PATH=/tmp/scratch
 export ENROOT_CONFIG_PATH=/home/${NONROOT_USER}/enroot
 mkdir ${ENROOT_CONFIG_PATH}
 chown ${NONROOT_USER} ${ENROOT_CONFIG_PATH}
 ENROOT_CACHE_PATH=${SHARED_DIR}/enroot envsubst < /tmp/enroot.template.conf > /tmp/enroot.conf
-ENROOT_TEMP_PATH=/tmp/scratch < /tmp/enroot.template.conf > /tmp/enroot.conf
+#ENROOT_TEMP_PATH=/tmp/scratch < /tmp/enroot.template.conf > /tmp/enroot.conf
 mv /tmp/enroot.conf /etc/enroot/enroot.conf
 chmod 0644 /etc/enroot/enroot.conf
 
