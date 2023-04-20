@@ -35,6 +35,7 @@ if [ "${OS}" == "Amazon Linux" ]; then
 	yum install -y https://github.com/NVIDIA/enroot/releases/download/v3.4.1/enroot+caps-3.4.1-1.el8.${arch}.rpm
   	export NONROOT_USER=ec2-user
 elif [ "${OS}" == "Ubuntu" ]; then
+	rm /etc/apt/sources.list.d/nvidia-docker.list
 	apt update
 	nvidia-smi && distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
 	    && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
